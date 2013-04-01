@@ -1,0 +1,54 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :First_name %><br />
+    <%= f.text_field :First_name %>
+  </div>
+  <div class="field">
+  <%= f.label:select_image %><br />
+  <%= f.file_field :image %>
+
+  </div>
+  <div class="field">
+    <%= f.label :Last_name %><br />
+    <%= f.text_field :Last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Date_of_birth %><br />
+    <%= f.date_select :Date_of_birth , :start_year => 1940 %>
+  </div>
+  <div class="field">
+    <%= f.label :Email_address %><br />
+    <%= f.text_field :Email_address %>
+  </div>
+  <div class="field">
+    <%= f.label :Age %><br />
+    <%= f.number_field :Age %>
+  </div>
+  <div class="field">
+    <%= f.label :Sex %><br />
+    <%= f.text_field :Sex %>
+  </div>
+  <div class="field">
+    <%= f.label :Nationality %><br />
+    <%= f.text_field :Nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :work_experiance %><br />
+    <%= f.text_area :work_experiance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
